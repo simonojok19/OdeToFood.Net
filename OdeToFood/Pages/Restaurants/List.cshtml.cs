@@ -23,10 +23,11 @@ namespace OdeToFood.Pages.Restaurants
             Config = config;
             RestuarantData = restuarantData;
         }
-        public void OnGet()
+        public void OnGet(string searchterm)
         {
+            
             Message = Config["Message"];
-            Restaurants = RestuarantData.GetAll();
+            Restaurants = RestuarantData.GetRestaurantByName(searchterm);
         }
     }
 }
