@@ -6,9 +6,9 @@
 <h1>Restaurants</h1>
 <form method="get">
     <div class="input-group">
-        <input type="text" class="form-control" name="searchterm">
+        <input type="text" class="form-control" asp-for="SearchTerm">
         <div class="input-group-append">
-            <span class="input-group-text">Search</span>
+            <button type="submit" class="input-group-text">Search</button>
         </div>
     </div>
 </form>
