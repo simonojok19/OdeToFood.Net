@@ -2,7 +2,8 @@
 
 namespace OdeToFood.Data
 {
-    public class Class1
+
+    public interface IRestaurantData
     {
     }
 }
