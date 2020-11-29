@@ -9,7 +9,7 @@ namespace OdeToFood.Data
 
     public interface IRestaurantData
     {
-        IEnumerable<Restaurant> GetAll();
+        IEnumerable<Restaurant> GetRestaurantByName(string name);
     }
 
     public class InMemoryRestuarantData : IRestaurantData
@@ -44,9 +44,10 @@ namespace OdeToFood.Data
                 }
             };
         }
-        public IEnumerable<Restaurant> GetAll()
+        public IEnumerable<Restaurant> GetRestaurantByName(string name = null)
         {
             return from r in restaurants
+                   where string.IsNullOrEmpty(name) || r.Name.StartsWith(name)
                    orderby r.Name
                    select r;
 
