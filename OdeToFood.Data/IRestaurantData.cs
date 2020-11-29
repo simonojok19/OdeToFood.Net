@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OdeToFood.Data
 {
@@ -45,7 +46,10 @@ namespace OdeToFood.Data
         }
         public IEnumerable<Restaurant> GetAll()
         {
-            throw new NotImplementedException();
+            return from r in restaurants
+                   orderby r.Name
+                   select r;
+
         }
     }
 }
