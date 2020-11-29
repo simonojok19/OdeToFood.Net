@@ -13,6 +13,14 @@ namespace OdeToFood.Data
 
     public class InMemoryRestuarantData : IRestaurantData
     {
+        List<Restaurant> restaurants;
+        public InMemoryRestuarantData()
+        {
+            restaurants = new List<Restaurant>()
+            {
+
+            };
+        }
         public IEnumerable<Restaurant> GetAll()
         {
             throw new NotImplementedException();
