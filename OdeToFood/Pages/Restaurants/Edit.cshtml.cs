@@ -36,8 +36,12 @@ namespace OdeToFood.Pages.Restaurants
 
         public IActionResult OnPost()
         {
-            restaurantData.Update(Restaurant);
-            restaurantData.Commit();
+            Cuisines = htmlHelper.GetEnumSelectList<CuisineType>();
+            if (ModelState.IsValid)
+            {
+                restaurantData.Update(Restaurant);
+                restaurantData.Commit();
+            }
             return Page();
         }
     }
