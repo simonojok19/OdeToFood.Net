@@ -8,6 +8,12 @@ namespace OdeToFood.Data
 {
     public class OdeToFoodDbContext: DbContext
     {
+        private readonly DbContextOptions<OdeToFoodDbContext> options;
+
+        public OdeToFoodDbContext(DbContextOptions<OdeToFoodDbContext> options): base(options)
+        {
+            this.options = options;
+        }
         public DbSet<Restaurant> Restaurants { get; set; }
     }
 }
